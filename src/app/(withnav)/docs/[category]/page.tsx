@@ -21,11 +21,11 @@ export default async function Categories({ params }: Props) {
 
   const response = await fetch(`${process.env.API_HOST}/api/navbar`);
 
-  const item = await response.json();
+  const data = await response.json();
 
-  console.log(item)
+  console.log(data);
 
-  const filteredItems: NavbarProps[] = item.filter(
+  const filteredItems: NavbarProps[] = data.items.filter(
     (item: NavbarProps) => item.category === category
   );
 
